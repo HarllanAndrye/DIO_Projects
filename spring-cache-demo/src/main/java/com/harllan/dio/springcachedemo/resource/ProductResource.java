@@ -20,7 +20,7 @@ public class ProductResource {
 	
 	private final ProductService productService;
 
-    @GetMapping("/")
+    @GetMapping
     public List<Product> listAll() {
         log.info("c=ProductResource, m=listAll");
         return productService.listAll();

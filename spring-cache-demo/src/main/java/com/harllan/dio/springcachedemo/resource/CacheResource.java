@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/cache")
 public class CacheResource {
 	
-	@GetMapping("/")
+	@GetMapping
     @CacheEvict(value = "product-cache", key = "")
     public String clearCache() {
         return "Limpou o cache";

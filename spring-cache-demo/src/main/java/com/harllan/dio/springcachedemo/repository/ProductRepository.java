@@ -16,6 +16,7 @@ public class ProductRepository {
 	public List<Product> listAll() {
         log.info("c=ProductRepository, m=listAll");
 
+        // Tempo para simular latência de acesso ao banco de dados
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -27,12 +28,14 @@ public class ProductRepository {
                 .sku("produto123")
                 .price(new BigDecimal("10.00"))
                 .description("Produto 1")
+                .active(false)
                 .build();
 
         final Product product2 = Product.builder()
                 .sku("produto987")
                 .price(new BigDecimal("7.90"))
                 .description("Produto 2")
+                .active(true)
                 .build();
 
         List<Product> products = List.of(product1, product2);
