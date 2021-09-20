@@ -1,0 +1,156 @@
+:root {
+    --vermelho: #E50914;
+    --preto: #141414;
+}
+
+/*
+    Reset CSS
+    * se refere a todos elementos
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: var(--preto);
+    font-family: 'Arial', Times, serif;
+    color: white;
+}
+
+header .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 20px;
+}
+
+header .logo {
+    margin-left: 5px;
+    color: var(--vermelho);
+    font-family: 'Arial Black', Courier, Times;
+    font-size: 40px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #AAA;
+    margin-right: 10px;
+}
+
+header nav a:hover {
+    color: #fff;
+}
+
+.logo-netflix svg {
+    width: 10.4375rem;
+    height: 2.8125rem;
+}
+
+.logo-N {
+    display: flex;
+}
+
+.logo-N svg {
+    width: 1.05rem;
+    height: auto;
+}
+
+.logo-N h5 {
+    letter-spacing: 0.2rem;
+}
+
+.filme-principal {
+    font-size: 16px;
+    background: linear-gradient(rgba(0,0,0,.50), rgba(0,0,0,.50)100%), url('../img/capa-casa-papel.jpg');
+    height: 400px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.filme-principal .descricao {
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.titulo {
+    /*margin-top: 10%;*/
+    font-size: 3.5rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+.titulo .quadrado-vermelho {
+    border: 1px solid var(--vermelho);
+    font-size: 2.3rem;
+    display: flex;
+    align-items: center;
+    background-color: var(--vermelho);
+    padding: 10px;
+    height: 3rem;
+    margin: 0 0.6rem;
+}
+
+.relevancia-ano {
+    display: flex;
+}
+
+.relevancia-ano .relevancia {
+    color: #5ab686;
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+.botao {
+    background-color: rgba(0, 0, 0, 50%);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    margin-right: 15px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: .3s ease all;
+}
+
+.botao:hover {
+    background-color: white;
+    color: black;
+}
+
+.botao svg {
+    margin-right: 8px;
+}
+
+.container {
+    margin-left: 20px;
+}
+
+.filme-principal .container {
+    width: 70%;
+}
+
+.box-filme {
+    height: 80%;
+    width: 80% !important;
+    display: block;
+}
+
+.carrosel-filmes {
+    margin: 10px 20px;
+}
+
+.carrosel-filmes p {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+
+
