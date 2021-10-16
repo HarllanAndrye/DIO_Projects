@@ -23,7 +23,5 @@
 <br>
 
 <p align="center">
-    <kbd >
-        <img src="images/logo-dio.png" width="30%"/>
-    </kbd>
+    <img src="images/logo-dio.png" width="30%"/>
 </p>
