@@ -15,3 +15,15 @@
 :file_folder: netflix-clone-interface: Recriando interface do Netflix com HTML5, CSS3 e JavaScript.
 
 :file_folder: app-weather: Projeto em Angular para consultar a previsão do tempo via API externa.
+
+:file_folder: blog: Projeto com o Json-Server como API e os dados são consumidos usando o Angular.
+ 
+<br>
+<br>
+<br>
+
+<p align="center">
+    <kbd >
+        <img src="images/logo-dio.png" width="30%"/>
+    </kbd>
+</p>

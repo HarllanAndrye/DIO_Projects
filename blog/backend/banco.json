@@ -1,0 +1,14 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "nome": "Harllan",
+      "mensagem": "Esta é minha mensagem de exemplo para o blog."
+    },
+    {
+      "nome": "Fulano de tal",
+      "mensagem": "Estou deixando aqui minha mensagem. Blog bom. Este é meu comentário...",
+      "id": 2
+    }
+  ]
+}
