@@ -2,10 +2,10 @@ package com.harllan.dio.citiesapi.utils;
 
 public class ConvertUnitUtils {
 	
-	private static final double MILES_KM = 1.609;
-	private static final double KM_MILES = 0.6214;
-	private static final double KM_METER = 1000;
-	private static final double METER_KM = 0.001;
+	private static final double MILES_KM = 1.609; //One mile to Km
+	private static final double KM_MILES = 0.6214; //One Km to Mile
+	private static final double KM_METER = 1000; //One Km to Meter
+	private static final double METER_KM = 0.001; //One Meter to Km
 	
 	public static double convertMilesToKilometers(double miles) {
 		return MILES_KM * miles;
@@ -29,8 +29,7 @@ public class ConvertUnitUtils {
 	}
 	
 	public static double convertMetersToMiles(double meters) {
-		double toKm = convertMetersToKilometers(meters);
-		return convertKilometersToMiles(toKm);
+		return meters / 1609.344;
 	}
 
 }
