@@ -14,7 +14,9 @@ import org.springframework.data.geo.Point;
 import org.springframework.stereotype.Service;
 
 import com.harllan.dio.citiesapi.cities.entities.City;
+import com.harllan.dio.citiesapi.cities.enums.UnitEnum;
 import com.harllan.dio.citiesapi.cities.repositories.CityRepository;
+import com.harllan.dio.citiesapi.utils.ConvertUnitUtils;
 import com.harllan.dio.citiesapi.utils.StringLocationUtils;
 
 @Service
@@ -52,9 +54,20 @@ public class DistanceService {
 	 * @param city2
 	 * @return
 	 */
-	public Double distanceByPointsInMiles(final Long city1, final Long city2) {
-		log.info("nativePostgresInMiles({}, {})", city1, city2);
-		return cityRepository.distanceByPoints(city1, city2);
+	public Double distanceByPointsInMiles(final Long city1Id, final Long city2Id, UnitEnum unit) {
+		log.info("nativePostgresInMiles({}, {})", city1Id, city2Id);
+		
+		double distanceInMiles = cityRepository.distanceByPoints(city1Id, city2Id);
+		
+		if (unit != null) {
+			if (UnitEnum.KILOMETER.equals(unit)) {
+				return ConvertUnitUtils.convertMilesToKilometers(distanceInMiles);
+			} else if (UnitEnum.METER.equals(unit)) {
+				return ConvertUnitUtils.convertMilesToMeters(distanceInMiles);
+			}
+		}
+		
+		return distanceInMiles;
 	}
 
 	/**
@@ -82,14 +95,24 @@ public class DistanceService {
 	 * @param city2
 	 * @return
 	 */
-	public Double distanceByCubeInMeters(Long city1, Long city2) {
-		log.info("distanceByCubeInMeters({}, {})", city1, city2);
-		final List<City> cities = cityRepository.findAllById((Arrays.asList(city1, city2)));
+	public Double distanceByCubeInMeters(Long city1Id, Long city2Id, UnitEnum unit) {
+		log.info("distanceByCubeInMeters({}, {})", city1Id, city2Id);
+		final List<City> cities = cityRepository.findAllById((Arrays.asList(city1Id, city2Id)));
 
 		Point p1 = cities.get(0).getLocation();
 		Point p2 = cities.get(1).getLocation();
 
-		return cityRepository.distanceByCube(p1.getX(), p1.getY(), p2.getX(), p2.getY());
+		double distanceInMeters = cityRepository.distanceByCube(p1.getX(), p1.getY(), p2.getX(), p2.getY());
+		
+		if (unit != null) {
+			if (UnitEnum.KILOMETER.equals(unit)) {
+				return ConvertUnitUtils.convertMetersToKilometers(distanceInMeters);
+			} else if (UnitEnum.MILE.equals(unit)) {
+				return ConvertUnitUtils.convertMetersToMiles(distanceInMeters);
+			}
+		}
+		
+		return distanceInMeters;
 	}
 
 	private double doCalculation(final double lat1, final double lon1, final double lat2, final double lng2,
