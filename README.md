@@ -21,6 +21,8 @@
 :file_folder: cities-api: API Rest de consulta de cidades, estados e países, além de calcular a distância entre cidades com base na latitude e longitude.
 
 :file_folder: desafio-poo: Projeto simples para aprender sobre Programação Orientada a Objetos (POO).
+
+:file_folder: dino-game: Cópia simples do jogo do dinossauro, encontrado no Chrome.
  
 <br>
 <br>
