@@ -23,6 +23,8 @@
 :file_folder: desafio-poo: Projeto simples para aprender sobre Programação Orientada a Objetos (POO).
 
 :file_folder: dino-game: Cópia simples do jogo do dinossauro, encontrado no Chrome.
+
+:file_folder: angular-ecommerce-example: Projeto simples apenas para iniciar no Angular. Não há integração com API.
  
 <br>
 <br>
